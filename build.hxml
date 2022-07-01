@@ -1,0 +1,6 @@
+-cp src
+
+-js bin/main.js
+
+-lib cascade
+-lib drc2d-js
