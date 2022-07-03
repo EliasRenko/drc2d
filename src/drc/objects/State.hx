@@ -1,14 +1,14 @@
 package drc.objects;
 
-import drc.input.Mouse;
+import drcJS.input.Mouse;
 import drc.core.App;
-import drc.types.WindowEventType;
-import drc.system.Window;
-import drc.display.Drawable;
-import drc.part.Object;
-import drc.utils.Common;
-import drc.part.RecycleList;
-import drc.input.Control;
+import drcJS.types.WindowEventType;
+import drcJS.display.Drawable;
+import drcJS.part.Object;
+import drcJS.utils.Common;
+import drcJS.part.RecycleList;
+import drcJS.input.Control;
+import drcJS.objects.Camera;
 
 class State extends Object {
 
@@ -61,7 +61,7 @@ class State extends Object {
 
 	public function addGraphic(graphic:Drawable):Void {
 
-		@:privateAccess graphic.__state = this;
+		//@:privateAccess graphic.__state = this;
 
 		graphics.add(graphic);
 	}
@@ -208,9 +208,9 @@ class State extends Object {
 		entities.forEachActive(__updateEntity);
 	}
 
-	public function onWindowEvent(window:Window, type:WindowEventType):Void {
+	//public function onWindowEvent(window:Window, type:WindowEventType):Void {
 
-	}
+	//}
 
 	public function __renderGraphic(drawable:Drawable):Void {
 		

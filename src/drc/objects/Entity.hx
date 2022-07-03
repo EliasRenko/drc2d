@@ -1,10 +1,10 @@
 package drc.objects;
 
-import drc.display.Graphic;
-import drc.part.Object;
+import drcJS.display.Graphic;
+import drcJS.part.Object;
 import drc.objects.State;
 
-@:allow(drc.objects.DrcState)
+@:allow(drcJS.objects.drcJSState)
 class Entity extends Object
 {
 	//** Publics.

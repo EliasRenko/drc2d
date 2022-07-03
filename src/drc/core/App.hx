@@ -1,13 +1,15 @@
 package drc.core;
 
-import drc.display.Stage;
+import drcJS.display.Stage;
 import drc.objects.State;
-import drc.part.ObjectList;
-import drc.system.Window;
-import drc.types.WindowEventType;
-import drc.utils.Common;
-import drc.utils.Resources;
-import drc.core.Runtime;
+import drcJS.part.ObjectList;
+//import drcJS.system.Window;
+import drcJS.types.WindowEventType;
+import drcJS.utils.Common;
+import drcJS.utils.Resources;
+import drcJS.core.Runtime;
+import drcJS.core.Context;
+import src.core.Promise;
 
 class App {
 
@@ -47,7 +49,7 @@ class App {
 
 	public function new() {
 
-		Common.app = this;
+		//Common.app = this;
 
 		//__runtime = new Runtime();
 
@@ -59,7 +61,7 @@ class App {
 
 		Common.context = __context;
 
-		__resources = new Resources();
+		//__resources = new Resources();
 
 		Common.resources = __resources;
 
@@ -70,7 +72,9 @@ class App {
 
 		var _preloads:Array<Promise<Dynamic>> = [
 
-			__resources.loadProfile('res/profiles/texture.json'),
+			//__resources.loadProfile('res/profiles/texture.json'),
+
+
 
 			//__resources.loadProfile('res/profiles/debug.json'),
 
@@ -88,9 +92,13 @@ class App {
 
 			//__resources.loadProfile("res/profiles/shapes.json"),
 
-			__resources.loadTexture('res/graphics/grid_bw.png'),
 
-			__resources.loadTexture('res/graphics/grid_mt.png'),
+
+			//__resources.loadTexture('res/graphics/grid_bw.png'),
+
+			//__resources.loadTexture('res/graphics/grid_mt.png'),
+
+
 
 			//__resources.loadTexture('res/graphics/grid.png'),
 
@@ -114,7 +122,7 @@ class App {
 
 		__promise.onComplete(function(promise:Promise<Dynamic>, type:Int) {
 
-			__stage = new Stage(Common.resources.getProfile('res/profiles/texture.json'));
+			//__stage = new Stage(Common.resources.getProfile('res/profiles/texture.json'));
 
 			Common.stage = stage;
 
@@ -254,30 +262,30 @@ class App {
 		@:privateAccess state.__z = states.count - 1;
 	}
 
-	private function __onWindowEvent(window:Window, type:WindowEventType):Void {
+	// private function __onWindowEvent(window:Window, type:WindowEventType):Void {
 
-		switch type {
+	// 	switch type {
 
-			case CLOSE:
+	// 		case CLOSE:
 
-			// ** Quit the application.
+	// 		// ** Quit the application.
 
-			case RESIZED:
+	// 		case RESIZED:
 
-				// ** Resize the stage.
+	// 			// ** Resize the stage.
 
-				__stage.resize(window.width, window.height);
+	// 			__stage.resize(window.width, window.height);
 
-			case _:
-		}
+	// 		case _:
+	// 	}
 
-		// ** For each state.
+	// 	// ** For each state.
 
-		for (i in 0...states.count) {
+	// 	for (i in 0...states.count) {
 
-			states.members[i].onWindowEvent(window, type);
-		}
-	}
+	// 		states.members[i].onWindowEvent(window, type);
+	// 	}
+	// }
 
 	// ** Getters and setters.
 

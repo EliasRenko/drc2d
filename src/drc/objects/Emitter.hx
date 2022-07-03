@@ -1,8 +1,8 @@
 package drc.objects;
 
-import drc.display.Tilemap;
-import drc.display.Particle;
-import drc.part.Object;
+import drcJS.display.Tilemap;
+import drcJS.display.Particle;
+import drcJS.part.Object;
 
 class Emitter extends Object {
 
