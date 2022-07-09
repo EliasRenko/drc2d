@@ -44,7 +44,7 @@ class State extends Object {
 
 	override public function init():Void {
 
-		Common.input.mouse.addEventListener(__onMouseMovement, 3);
+		// Common.input.mouse.addEventListener(__onMouseMovement, 3);
 	}
 
 	override public function release():Void {
@@ -135,75 +135,75 @@ class State extends Object {
         //     camera.x += 2;
         // }
 
-		if (Common.input.keyboard.check(26)) {
+		// if (Common.input.keyboard.check(26)) {
 
-			// ** UP
+		// 	// ** UP
 
-			camera.y += 2;
-		}
+		// 	camera.y += 2;
+		// }
 
-		if (Common.input.keyboard.check(22)) {
+		// if (Common.input.keyboard.check(22)) {
 
-			// ** DOWN
+		// 	// ** DOWN
 
-			camera.y -= 2;
-		}
+		// 	camera.y -= 2;
+		// }
 
-		if (Common.input.keyboard.check(4)) {
+		// if (Common.input.keyboard.check(4)) {
 
-			// ** LEFT
+		// 	// ** LEFT
 
-			camera.x += 2;
-		}
+		// 	camera.x += 2;
+		// }
 
-		if (Common.input.keyboard.check(7)) {
+		// if (Common.input.keyboard.check(7)) {
 
-			// ** RIGHT
+		// 	// ** RIGHT
 
-			camera.x -= 2;
-		}
+		// 	camera.x -= 2;
+		// }
 
-		if (Common.input.keyboard.released(53)) {
+		// if (Common.input.keyboard.released(53)) {
 
-			// ** USE
+		// 	// ** USE
 
-			if (__perpspective) {
+		// 	if (__perpspective) {
 
-			 	__perpspective = false;
-			}
-			else {
+		// 	 	__perpspective = false;
+		// 	}
+		// 	else {
 	
-				__perpspective = true;
-			}
-		}
+		// 		__perpspective = true;
+		// 	}
+		// }
 
-		if (Common.input.keyboard.check(80)) {
+		// if (Common.input.keyboard.check(80)) {
 
-			// ** ARROW LEFT
+		// 	// ** ARROW LEFT
 
-			camera.yaw -= 3;
-		}
+		// 	camera.yaw -= 3;
+		// }
 
-		if (Common.input.keyboard.check(79)) {
+		// if (Common.input.keyboard.check(79)) {
 
-			// ** ARROW RIGHT
+		// 	// ** ARROW RIGHT
 
-			camera.yaw += 3;
-		}
+		// 	camera.yaw += 3;
+		// }
 
-		if (Common.input.keyboard.check(82)) {
+		// if (Common.input.keyboard.check(82)) {
 
-			// ** ARROW TOP
+		// 	// ** ARROW TOP
 
-			camera.z -= 4;
-		}
+		// 	camera.z -= 4;
+		// }
 
-		if (Common.input.keyboard.check(81)) {
+		// if (Common.input.keyboard.check(81)) {
 
-			// ** ARROW BOTTOM
+		// 	// ** ARROW BOTTOM
 
-			camera.z += 4;
-		}
+		// 	camera.z += 4;
+		// }
 
 		entities.forEachActive(__updateEntity);
 	}
@@ -249,12 +249,12 @@ class State extends Object {
 
 	private function get_mouseX():Int {
 
-		return Common.input.mouse.x;
+		return null;
 	}
 
 	private function get_mouseY():Int {
 
-		return Common.input.mouse.y;
+		return null;
 	}
 
 	private function get_z():Float {

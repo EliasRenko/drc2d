@@ -6,10 +6,10 @@ import drcJS.part.ObjectList;
 //import drcJS.system.Window;
 import drcJS.types.WindowEventType;
 import drcJS.utils.Common;
-import drcJS.utils.Resources;
-import drcJS.core.Runtime;
+import drc.utils.Resources;
+import drcJS.backend.web.core.Runtime;
 import drcJS.core.Context;
-import src.core.Promise;
+import drcJS.core.Promise;
 
 class App {
 
@@ -51,17 +51,17 @@ class App {
 
 		//Common.app = this;
 
-		//__runtime = new Runtime();
+		__runtime = new Runtime();
 
 		// ** Init runtime.
 
-		//__runtime.init();
+		__runtime.init();
 
 		__context = new Context();
 
 		Common.context = __context;
 
-		//__resources = new Resources();
+		__resources = new Resources();
 
 		Common.resources = __resources;
 
@@ -72,7 +72,7 @@ class App {
 
 		var _preloads:Array<Promise<Dynamic>> = [
 
-			//__resources.loadProfile('res/profiles/texture.json'),
+			__resources.loadProfile('res/profiles/texture.json'),
 
 
 
@@ -94,9 +94,9 @@ class App {
 
 
 
-			//__resources.loadTexture('res/graphics/grid_bw.png'),
+			__resources.loadTexture('res/graphics/grid_bw.png'),
 
-			//__resources.loadTexture('res/graphics/grid_mt.png'),
+			__resources.loadTexture('res/graphics/grid_mt.png'),
 
 
 
@@ -122,7 +122,7 @@ class App {
 
 		__promise.onComplete(function(promise:Promise<Dynamic>, type:Int) {
 
-			//__stage = new Stage(Common.resources.getProfile('res/profiles/texture.json'));
+			__stage = new Stage(Common.resources.getProfile('res/profiles/texture.json'));
 
 			Common.stage = stage;
 
@@ -130,17 +130,11 @@ class App {
 
 			ready();
 
-			//runtime.event.addEventListener(loop, 0, 0);
+			// __runtime.window.addEventListener(__onWindowEvent, 0);
 
+			__runtime.addEventListener(loop, 1);
 
-
-
-
-			//__runtime.window.addEventListener(__onWindowEvent, 0);
-
-			//__runtime.event.addEventListener(loop, 1);
-
-			//__runtime.requestLoopFrame();
+			__runtime.requestLoopFrame();
 		});
 
 		__promise.onReject(function(promise:Promise<Dynamic>, type:Int) {
@@ -151,7 +145,7 @@ class App {
 
 	public function ready():Void {}
 
-	public function loop(value:Float, type:UInt):Void {
+	public function loop(runtime:Runtime, type:UInt):Void {
 
 		trace('APP_loop');
 
@@ -159,7 +153,7 @@ class App {
 
 		#if js
 
-		//__runtime.pollEvents();
+		__runtime.pollEvents();
 
 		update();
 
@@ -204,7 +198,7 @@ class App {
 
 	public function loopNew(value:Float, type:UInt):Void {
 
-		__runtime.pollEvents();
+		//__runtime.pollEvents();
 	}
 
 	public function addState(state:State):State {
