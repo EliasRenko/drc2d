@@ -1,5 +1,6 @@
 package drc.core;
 
+import EventDispacher;
 import drcJS.display.Stage;
 import drc.objects.State;
 import drcJS.part.ObjectList;
@@ -10,8 +11,10 @@ import drc.utils.Resources;
 import drcJS.backend.web.core.Runtime;
 import drcJS.core.Context;
 import drcJS.core.Promise;
+import drcJS.ui.UI;
+import drc.types.AppEventType;
 
-class App {
+class App extends EventDispacher<App> {
 
 	// ** Publics
 
@@ -47,7 +50,11 @@ class App {
 	/** @private **/
 	private var __promise:Promise<Dynamic>;
 
+	private var ui:UI;
+
 	public function new() {
+
+		super();
 
 		//Common.app = this;
 
@@ -64,6 +71,8 @@ class App {
 		__resources = new Resources();
 
 		Common.resources = __resources;
+
+		ui = new UI();
 
 		preload();
 	}
@@ -143,7 +152,10 @@ class App {
 		});
 	}
 
-	public function ready():Void {}
+	public function ready():Void {
+
+		dispatchEvent(this, READY);
+	}
 
 	public function loop(runtime:Runtime, type:UInt):Void {
 

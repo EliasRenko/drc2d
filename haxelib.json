@@ -9,5 +9,5 @@
     "contributors": ["EliasRenko"],
     "tags": [],
     "classPath": "src",
-    "dependencies": { "drc2d-js": "" }
+    "dependencies": { "drc2d-js": "" , "haxe-commands": "", "haxe-json": "", "haxe-events": "",  "haxe-unit": ""}
 }

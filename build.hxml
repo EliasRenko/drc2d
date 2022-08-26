@@ -4,3 +4,7 @@
 
 -lib cascade
 -lib drc2d-js
+-lib haxe-commands
+-lib haxe-json
+-lib haxe-events 
+-lib haxe-unit 
