@@ -11,7 +11,6 @@ import drc.utils.Resources;
 import drcJS.backend.web.core.Runtime;
 import drcJS.core.Context;
 import drcJS.core.Promise;
-import drcJS.ui.UI;
 import drc.types.AppEventType;
 
 class App extends EventDispacher<App> {
@@ -50,8 +49,6 @@ class App extends EventDispacher<App> {
 	/** @private **/
 	private var __promise:Promise<Dynamic>;
 
-	private var ui:UI;
-
 	public function new() {
 
 		super();
@@ -71,8 +68,6 @@ class App extends EventDispacher<App> {
 		__resources = new Resources();
 
 		Common.resources = __resources;
-
-		ui = new UI();
 
 		preload();
 	}

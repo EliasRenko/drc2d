@@ -207,9 +207,11 @@ class Resources extends drcJS.utils.Resources {
 
                 if (status == 200 || status == 0) { 
 
-                    trace(status);
+                    // trace(status);
 
-                    var i:Input = new BytesInput(Bytes.ofData(response));
+                    //var i:Input = new BytesInput(Bytes.ofData(response.view.buffer));
+
+                    var i:Input = new BytesInput(response.view.buffer);
 
                     var png:PNG = new PNG(i);
 
