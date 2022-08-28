@@ -115,6 +115,8 @@ class App extends EventDispacher<App> {
 			//__resources.loadFont("res/fonts/nokiafc22.json"),
 
 			//__resources.loadText("res/graphics/gui.json")
+
+			__resources.loadText('res/maps/testmap1.tmj')
 		];
 
 		// ** FIX: Promise, no success if sent an empty array.
@@ -154,7 +156,7 @@ class App extends EventDispacher<App> {
 
 	public function loop(runtime:Runtime, type:UInt):Void {
 
-		trace('APP_loop');
+		//trace('APP_loop');
 
 		// ** While runtime is active...
 
