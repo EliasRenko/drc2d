@@ -116,7 +116,11 @@ class App extends EventDispacher<App> {
 
 			//__resources.loadText("res/graphics/gui.json")
 
-			__resources.loadText('res/maps/testmap1.tmj')
+			__resources.loadText('res/maps/testmap1.tmj'),
+
+			__resources.loadTexture('res/graphics/dev_tiles.png'),
+
+			__resources.loadTexture('res/graphics/db32.png')
 		];
 
 		// ** FIX: Promise, no success if sent an empty array.

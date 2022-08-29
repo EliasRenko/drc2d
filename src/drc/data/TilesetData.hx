@@ -3,17 +3,17 @@ package drc.data;
 @:structInit
 class TilesetData {
     
-    var columns:Int;
-	var image:String;
-	var imageheight:Int;
-	var imagewidth:Int;
-	var margin:Int;
-	var name:String;
-	var spacing:Int;
-	var tilecount:Int;
-	var tiledversion:String;
-	var tileheight:Int;
-	var tilewidth:Int;
-	var type:String;
-	var version:String;
+    public var columns:Int;
+	public var image:String;
+	public var imageheight:Int;
+	public var imagewidth:Int;
+	public var margin:Int;
+	public var name:String;
+	public var spacing:Int;
+	public var tilecount:Int;
+	public var tiledversion:String;
+	public var tileheight:Int;
+	public var tilewidth:Int;
+	public var type:String;
+	public var version:String;
 }
